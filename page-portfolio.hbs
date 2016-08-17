@@ -12,8 +12,9 @@
     </nav>
 </header>
 
-<main class="content" role="main">
+<main id="content" class="content" role="main">
 
+  {{> "loop"}}
 {{#get "posts" limit="all" include="author,tags" filter="tags:project"}}
   {{#foreach posts}}
     <article class="{{post_class}}">
