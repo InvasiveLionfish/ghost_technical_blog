@@ -18,10 +18,8 @@
     <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
 </header>
 
-{{! The main content area on the homepage }}
-<main id="content" class="content" role="main">
-
-    {{#get "posts" limit="5" include="author,tags" filter="tags:notes"}}
+    {{!--Currently, the get API helper does not work with pagination at beta phase--}}
+    {{!--{{#get "posts" limit="5" include="author,tags" filter="tags:notes"}}--}}
   {{#foreach posts}}
       {{!--I added this if statement to see if anything gets fixed--}}
       {{#if tags name="notes"}}  
@@ -41,8 +39,7 @@
     </article>
         {{/if}}
   {{/foreach}}
-{{/get}}
+{{!--{{/get}}--}}
 
-</main>
 
-{{!--{{pagination}}--}}
+{{pagination}}
