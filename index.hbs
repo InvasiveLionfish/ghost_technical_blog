@@ -23,6 +23,8 @@
 
     {{#get "posts" limit="5" include="author,tags" filter="tags:notes"}}
   {{#foreach posts}}
+      {{!--I added this if statement to see if anything gets fixed--}}
+      {{#if tags name="notes"}}  
     <article class="{{post_class}}">
         <header class="post-header">
             <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
@@ -37,9 +39,10 @@
             <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
         </footer>
     </article>
+        {{/if}}
   {{/foreach}}
 {{/get}}
 
 </main>
 
-{{pagination}}
+{{!--{{pagination}}--}}
